@@ -1,0 +1,91 @@
+/* Main Note Card */
+.note {
+  width: 320px;
+  padding: 1.5rem;
+  background-color: #1f2937; /* Tailwind gray-800 */
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.note:hover {
+  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.7); /* soft blue glow */
+}
+
+/* Note Heading */
+.noteHead {
+  margin-bottom: 1rem;
+}
+
+.noteHead h4 {
+  font-size: 1.25rem;
+  color: #3b82f6; /* Tailwind blue-500 */
+  font-weight: bold;
+}
+
+/* Note Description */
+.noteDesc {
+  margin-bottom: 1.5rem;
+  color: #d1d5db; /* Tailwind gray-300 */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Buttons Container */
+.noteActions {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+/* Buttons */
+.editBtn,
+.deleteBtn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.editBtn {
+  background-color: #16a34a; /* Tailwind green-600 */
+}
+
+.editBtn:hover {
+  background-color: #15803d; /* Tailwind green-700 */
+}
+
+.deleteBtn {
+  background-color: #dc2626; /* Tailwind red-600 */
+}
+
+.deleteBtn:hover {
+  background-color: #b91c1c; /* Tailwind red-700 */
+}
+
+
+/* Timestamp line */
+.noteTimestamp {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem; /* text-sm */
+  color: #9ca3af; /* Tailwind gray-400 */
+}
+
+/* "SHOW MORE / SHOW LESS" link‑style button */
+.toggleBtn {
+  background: transparent;
+  border: none;
+  color: #3b82f6; /* Tailwind blue-500 */
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+.toggleBtn:hover {
+  text-decoration: underline;
+}

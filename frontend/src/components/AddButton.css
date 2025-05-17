@@ -1,0 +1,28 @@
+.addNote {
+  position: fixed;
+  bottom: 2rem; /* bottom-8 */
+  right: 2rem; /* right-8 */
+  z-index: 50; /* z-50 */
+}
+
+.addNote button {
+  font-size: 2.25rem; /* text-4xl */
+  text-align: center;
+  padding: 1rem 1rem 0.875rem; /* p-4 py-2 pb-3.5 equivalent */
+  border-radius: 9999px; /* rounded-full */
+  background-color: #2563eb; /* bg-blue-600 */
+  color: white; /* text-white */
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* shadow-lg */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addNote button:hover {
+  background-color: #1d4ed8; /* bg-blue-700 */
+}
+
+.addNote a {
+  text-decoration: none;
+  color: white;
+}

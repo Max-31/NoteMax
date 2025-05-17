@@ -1,0 +1,64 @@
+.outerPopup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15%;
+}
+
+.popupContainer {
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background-color: #1f2937; /* gray-800 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.popupHeading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.popupHeading h4 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #f9fafb;
+}
+
+.popupBtnGroup {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.popupSaveBtn,
+.popupCancelBtn {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.375rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.popupSaveBtn {
+  background-color: #16a34a; /* green-600 */
+}
+
+.popupSaveBtn:hover {
+  background-color: #15803d; /* green-700 */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.popupCancelBtn {
+  background-color: #dc2626; /* red-600 */
+}
+
+.popupCancelBtn:hover {
+  background-color: #b91c1c; /* red-700 */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}

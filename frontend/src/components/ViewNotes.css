@@ -1,0 +1,10 @@
+.allNotes {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  justify-content: center; /* justify-center */
+  gap: 2rem; /* gap-8 → 2rem = 32px */
+  padding-top: 2rem; /* py-8 → 2rem top */
+  padding-bottom: 2rem; /* py-8 → 2rem bottom */
+  padding-left: 1rem; /* px-4 → 1rem left */
+  padding-right: 1rem; /* px-4 → 1rem right */
+}

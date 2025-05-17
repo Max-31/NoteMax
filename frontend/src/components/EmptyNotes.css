@@ -1,0 +1,28 @@
+/* EmptyNotes.css */
+
+.emptyNotesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    color: #777;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.8;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Simple fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

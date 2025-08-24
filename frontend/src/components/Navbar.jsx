@@ -1,18 +1,29 @@
 import React from 'react';
 import './Navbar.css'; 
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
-const Navbar = () => {
+const Navbar = ({onSearch}) => {
     const navigate= useNavigate();
+    const {
+      register,
+      handleSubmit,
+      formState: {isSubmitting},
+    }= useForm();
+
     const logout= ()=>{
       console.log("logout clicked");
 
       localStorage.removeItem("email");
       console.log("email cleared");
       
-      navigate('/');
+      navigate('/login');
       console.log("navigate hit");
-      window.location.reload();
+      // window.location.reload();
+    }
+
+    const handleSearch= (data)=>{
+      onSearch(data.searchQuery);
     }
 
   return (
@@ -20,6 +31,22 @@ const Navbar = () => {
         {/* Logo */}
         <div className="logo">
             NoteMax
+        </div>
+
+        <div className="searchBox">
+          <form onChange={handleSubmit(handleSearch)}>
+            <input 
+              type= "text" 
+              id= "searchQuery"
+              placeholder= "Search"
+              {
+                ...register("searchQuery")
+              }
+            />
+            {/* <button className= "btn searchBtn" type="submit">
+              {isSubmitting ? "Searching" : "Search"}
+            </button> */}
+          </form>
         </div>
 
         {/* Options */}

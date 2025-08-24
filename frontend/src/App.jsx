@@ -1,7 +1,8 @@
 import './App.css'
 import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
-import ViewNotes from './components/ViewNotes'
+// import ViewNotes from './components/ViewNotes'
+import Home from './components/Home'
 import Input from './components/Input'
 import ReCheckPopup from './components/ReCheckPopup'
 import FormComponent from './components/FormComponent'
@@ -13,8 +14,9 @@ const router= createBrowserRouter(
       path: '/',
       element:
       <div>
-        <Navbar />
-        <ViewNotes />
+        {/* <Navbar />
+        <ViewNotes /> */}
+        <Home />
       </div>
     },
     {

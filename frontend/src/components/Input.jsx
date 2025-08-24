@@ -15,6 +15,7 @@ const Input = () => {
   const {
     register,
     handleSubmit,
+    reset,
     // formState: { errors, isSubmitting },
     formState: { isSubmitting },
   } = useForm();
@@ -93,7 +94,7 @@ const Input = () => {
             <button
               type="button"
               className="cancelBtn"
-              onClick={() => navigate('/')}
+              onClick={() => {reset(); navigate('/');}}
             >
               Cancel
             </button>

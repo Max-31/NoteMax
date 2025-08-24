@@ -64,19 +64,38 @@ const updateNote= async(req, res)=>{
 const fetchNote= async(req, res)=>{
     try{
         const {email}= req.params;
+        const {search}= req.query;
 
         const isUser= await User.findOne({email});
         
         if(isUser){
             const userID= isUser._id;
-            const allNote= await Note.find({user: userID});
-            if(allNote.length===0){
-                res.status(500).json({message: "NO Note Found!"})
+
+            let allNote;
+
+            if(search){
+                allNote= await Note.find({
+                    user: userID,
+                    $or: [
+                        { topic: { $regex: search, $options: 'i' } },
+                        { description: { $regex: search, $options: 'i' } },
+                        { tags: { $regex: search, $options: 'i' } }
+                    ]
+                });
             }
             else{
-                // res.status(200).json({message: "Successful Fetching"})
-                res.status(200).json(allNote)
+                allNote= await Note.find({user: userID});
             }
+
+            res.status(200).json(allNote);
+            // const allNote= await Note.find({user: userID});
+            // if(allNote.length===0){
+            //     res.status(500).json({message: "NO Note Found!"})
+            // }
+            // else{
+            //     // res.status(200).json({message: "Successful Fetching"})
+            //     res.status(200).json(allNote)
+            // }
         }
         else{
             res.status(404).json({message: "User NOT Found! Please Login/ SignUp"})

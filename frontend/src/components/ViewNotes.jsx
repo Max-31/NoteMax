@@ -11,45 +11,29 @@ import AddButton from './AddButton'
 // const url= import.meta.env.VITE_API_URL;
 
 const ViewNotes = ({notes}) => {
-  // const [notes, setNotes]= useState([]);
-  // const navigate= useNavigate();
+  // If no notes
+  if (notes.length === 0) {
+    return (
+      <div className="empty-notes-container">
+        <EmptyNotes />
+        <AddButton />
+      </div>
+    );
+  }
 
-  // const email = localStorage.getItem("email");
-
-  // useEffect(() => {
-  //   if(!email){
-  //     navigate('/signUp');
-  //     return;
-  //   }
-
-  //   const render= async()=>{
-  //     console.log("1");
-  //     try{
-  //       const res= await axios.get(`${url}/note/allNote/${email}`)
-  //       console.log(res.status);
-  //       setNotes(res.data);
-  //     }
-  //     catch(err){
-  //       console.log(err.message);
-  //     }
-  //   }
-
-  //   render();
-  // }, [])
-
+  // grid of notes
   return (
     <div className="allNotes">
-      {
-        notes.length === 0
-        ?
-        <EmptyNotes />
-        :
-        notes.map(note => (
-          <Notes key={note._id} topic={note.topic} description={note.description} noteID= {note._id} createdOn={note.createdAt} updatedOn={note.updatedAt}/>
-          // noteID, topic, description, createdOn, updatedOn
-        ))        
-      }
-
+      {notes.map(note => (
+        <Notes 
+          key={note._id} 
+          topic={note.topic} 
+          description={note.description} 
+          noteID={note._id} 
+          createdOn={note.createdAt} 
+          updatedOn={note.updatedAt}
+        />
+      ))}
       <AddButton />
     </div>
   );

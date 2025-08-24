@@ -2,20 +2,27 @@
 
 .allNotes {
   display: grid;
-  /* This is the key part: create responsive columns */
+  /* responsive columns */
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
   padding: 2rem 1rem;
 }
 
-/* .allNotes {
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 2rem; 
-  padding-top: 2rem; 
-  padding-bottom: 2rem; 
-  padding-left: 1rem; 
-  padding-right: 1rem; 
-} */
+.empty-notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;     
+  text-align: center;
+  
+  /* Make the container fill the rest of the screen below the navbar */
+  /* 100vh (full screen height) minus the approximate height of your navbar */
+  /* min-height: calc(100vh - 85px);  */
+}
 
+/* You might want to style the text from EmptyNotes component too */
+.empty-notes-container h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #6b7280; /* A muted gray color */
+}

@@ -104,7 +104,7 @@ const FormComponent = () => {
           {/* Submit Button */}
           <div className="btn">
             <button type="submit" className="loginBtn">
-              {isSubmitting? "Submitting" : (isSignUp? "SignUp" : "Login")}
+              {isSubmitting? (isSignUp? "Registering" : "Logging In") : (isSignUp? "SignUp" : "Login")}
             </button>
           </div>
 
